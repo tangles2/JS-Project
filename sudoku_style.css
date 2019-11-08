@@ -1,9 +1,5 @@
 h1 {
-    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 60px;
-  line-height: 60px;
+    color: green;
 }
 tr:hover{
     background-color: limegreen;
