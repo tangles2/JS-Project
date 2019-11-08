@@ -1,6 +1,6 @@
 let sudokuBoard = Array(9);
 let boardPositions = Array(9);
-//MAKE BOARD
+//Make Board
 function createSudokuBoard() {
     for (let i = 0; i < 9; i++) {
         sudokuBoard[i] = Array(9);
@@ -27,12 +27,12 @@ function insertNumber() {
     let i = 0;
     while (i < 81) {
         let location = boardPositions[(Math.floor(Math.random() * boardPositions.length))];
-        let insertRow = location[0];
-        let insertColumn = location[1];
-        let value = checkLocation(insertRow, insertColumn);
-        sudokuBoard[insertRow][insertColumn] = value;
+        let rowCheck = location[0];
+        let colCheck = location[1];
+        let value = checkLocation(rowCheck, colCheck);
+        sudokuBoard[rowCheck][colCheck] = value;
         if (!value) {
-            sudokuBoard[insertRow][insertColumn] = '-';
+            sudokuBoard[rowCheck][colCheck] = '-';
         }
         let indexCoordinate = boardPositions.indexOf(location);
         boardPositions.splice(indexCoordinate, 1);
@@ -74,7 +74,8 @@ function checkLocation(row, column) {
     end = choice[(Math.floor(Math.random() * choice.length))];
     return end;
 }
-function makeTableHTML(t) {
+//TO HTML
+function toHTML(t) {
     let tmp = "<table border=1>";
     for (let i = 0; i < t.length; i++) {
         tmp += "<tr>";
@@ -88,4 +89,4 @@ function makeTableHTML(t) {
 }
 createSudokuBoard();
 console.table(sudokuBoard);
-document.write(makeTableHTML(sudokuBoard));
+document.write(toHTML(sudokuBoard));
